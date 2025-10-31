@@ -16,5 +16,9 @@ View your app in AI Studio: https://ai.studio/apps/drive/1sq0yqloulCxxofYXE91m2f
 1. Install dependencies:
    `npm install`
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+3. **Configure Firebase Storage CORS** (IMPORTANT for file uploads to work):
+   - See `CORS_SETUP_INSTRUCTIONS.md` for detailed instructions
+   - Quick method: In Google Cloud Console, go to Storage > Buckets > your bucket > Configuration > CORS
+   - Paste the contents of `cors.json`
+4. Run the app:
    `npm run dev`
