@@ -10,7 +10,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyDEoNwZ5Scdx3Gx-rqXwtqZAp-cIxB2OMw",
   authDomain: "projectmanagementsystem-3820.firebaseapp.com",
   projectId: "projectmanagementsystem-3820",
-  storageBucket: "projectmanagementsystem-3820.appspot.com",
+  storageBucket: "projectmanagementsystem-3820.firebasestorage.app",
   messagingSenderId: "46472240769",
   appId: "1:46472240769:web:514e1e85f550b0c95ab780"
 };
