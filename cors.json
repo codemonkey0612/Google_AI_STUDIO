@@ -1,0 +1,16 @@
+[
+  {
+    "origin": ["https://project-manager-pro-46472240769.us-west1.run.app"],
+    "method": ["GET", "POST", "PUT", "DELETE", "HEAD"],
+    "responseHeader": [
+      "Content-Type",
+      "Authorization",
+      "X-Firebase-Storage-Version",
+      "X-Goog-Upload-Protocol",
+      "X-Goog-Upload-Command"
+    ],
+    "maxAgeSeconds": 3600
+  }
+]
+
+
