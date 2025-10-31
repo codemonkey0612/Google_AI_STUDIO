@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>プロジェクトマネージャー</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              sky: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                200: '#bae6fd',
+                300: '#7dd3fc',
+                400: '#38bdf8',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                700: '#0369a1',
+                800: '#075985',
+                900: '#0c4a6e',
+                950: '#082f49',
+              },
+              emerald: {
+                50: '#ecfdf5',
+                100: '#d1fae5',
+                200: '#a7f3d0',
+                300: '#6ee7b7',
+                400: '#34d399',
+                500: '#10b981',
+                600: '#059669',
+                700: '#047857',
+                800: '#065f46',
+                900: '#064e3b',
+                950: '#022c22',
+              },
+              violet: {
+                50: '#f5f3ff',
+                100: '#ede9fe',
+                200: '#ddd6fe',
+                300: '#c4b5fd',
+                400: '#a78bfa',
+                500: '#8b5cf6',
+                600: '#7c3aed',
+                700: '#6d28d9',
+                800: '#5b21b6',
+                900: '#4c1d95',
+                950: '#2e1065',
+              },
+            },
+            fontFamily: {
+              'material-symbols-outlined': ['Material Symbols Outlined'],
+            }
+          }
+        },
+        plugins: [],
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style type="text/tailwindcss">
+      @layer base {
+        input[type='text'],
+        input[type='email'],
+        input[type='password'],
+        input[type='number'],
+        input[type='url'],
+        input[type='date'],
+        input[type='month'],
+        textarea,
+        select {
+          @apply bg-white text-slate-800;
+        }
+      }
+      @layer utilities {
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        input[type=number] {
+          -moz-appearance: textfield; /* Firefox */
+        }
+        .material-symbols-outlined {
+          font-family: 'Material Symbols Outlined', sans-serif;
+          font-weight: normal;
+          font-style: normal;
+          font-size: 18px; /* Default size, can be overridden by Tailwind text utilities */
+          line-height: 1;
+          letter-spacing: normal;
+          text-transform: none;
+          display: inline-block;
+          white-space: nowrap;
+          word-wrap: normal;
+          direction: ltr;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          text-rendering: optimizeLegibility;
+          font-feature-settings: 'liga';
+          /* Default variation settings, can be adjusted or overridden */
+          font-variation-settings: 
+            'FILL' 0, /* 0 for outlined, 1 for filled */
+            'wght' 400, /* Weight, e.g., 300, 400, 500, 700 */
+            'GRAD' 0, /* Grade */
+            'opsz' 18; /* Optical size */
+        }
+        .resize-handle {
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 8px;
+          z-index: 10;
+        }
+        .resize-handle.top {
+          top: -4px;
+          cursor: n-resize;
+        }
+        .resize-handle.bottom {
+          bottom: -4px;
+          cursor: s-resize;
+        }
+        .gantt-resize-handle {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 10px;
+          z-index: 20;
+          cursor: ew-resize;
+        }
+        .gantt-resize-handle::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 4px;
+          height: 60%;
+          min-height: 16px;
+          background-color: rgba(255, 255, 255, 0.7);
+          border: 1px solid rgba(0, 0, 0, 0.3);
+          border-radius: 4px;
+        }
+        .gantt-resize-handle.left {
+          left: -5px;
+        }
+        .gantt-resize-handle.right {
+          right: -5px;
+        }
+        .gantt-bar-body {
+          cursor: move;
+        }
+        body.dragging-gantt, body.dragging-gantt * {
+            cursor: move !important;
+            user-select: none;
+        }
+        body.dragging-gantt-resize, body.dragging-gantt-resize * {
+            cursor: ew-resize !important;
+            user-select: none;
+        }
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom": "https://esm.sh/react-dom@^19.1.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2",
+    "firebase": "https://esm.sh/firebase@^11.9.1",
+    "@firebase/auth": "https://esm.sh/@firebase/auth@^1.10.7",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "firebase/": "https://esm.sh/firebase@^12.0.0/",
+    "@google/genai": "https://esm.sh/@google/genai"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-100 text-slate-800 font-sans antialiased text-sm">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
