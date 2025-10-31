@@ -11,7 +11,7 @@ import Modal from '../components/Modal';
 import { PlusIcon, SaveIcon, CancelIcon, TrashIcon, EditIcon, CogIcon, CloudUploadIcon, ArrowUpwardIcon, ArrowDownwardIcon, TableViewIcon, ShowChartIcon, BarChartIcon, FilterListIcon, FileDownloadIcon, ContentCopyIcon } from '../components/Icons';
 import { PrimaryButton, SecondaryButton, IconButton } from '../components/common/Buttons';
 import { EditableField } from '../components/common/EditableField';
-import { hexToRgba, formatDate, formatKpiNumber } from '../../utils';
+import { hexToRgba, formatDate, formatKpiNumber } from '@/utils';
 import { ComparisonDisplay, ImageUploadField } from './kpi/KpiComponents';
 
 const CHART_COLORS = [

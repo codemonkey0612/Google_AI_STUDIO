@@ -4,7 +4,7 @@ import { storage } from '../../firebase';
 import { Project } from '../../types';
 import { SecondaryButton } from '../../components/common/Buttons';
 import { CloudUploadIcon, ArrowUpwardIcon, ArrowDownwardIcon } from '../../components/Icons';
-import { formatKpiNumber } from '../../utils';
+import { formatKpiNumber } from '@/utils';
 
 export const ComparisonDisplay: React.FC<{ value: number | null | undefined, baseValue: number | null | undefined, showSign?: boolean, showParens?: boolean }> = ({ value, baseValue, showSign = true, showParens = true }) => {
     if (value === null || value === undefined || isNaN(value)) {

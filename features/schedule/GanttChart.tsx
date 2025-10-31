@@ -1,6 +1,6 @@
 import React from 'react';
 import { JAPANESE_PUBLIC_HOLIDAYS } from '../../constants';
-import { formatDate } from '../../utils';
+import { formatDate } from '@/utils';
 
 interface GanttChartHeaderProps {
     timelineDates: Date[];

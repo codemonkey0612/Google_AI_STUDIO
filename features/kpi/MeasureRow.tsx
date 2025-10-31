@@ -5,7 +5,7 @@ import { EditableField } from '../../components/common/EditableField';
 import { ImageUploadField, ComparisonDisplay } from './KpiComponents';
 import { IconButton } from '../../components/common/Buttons';
 import { SaveIcon, CancelIcon, EditIcon, TrashIcon, DragHandleIcon } from '../../components/Icons';
-import { formatKpiNumber } from '../../utils';
+import { formatKpiNumber } from '@/utils';
 
 export const MeasureRow: React.FC<{
     row: KpiMeasureRow,

@@ -5,7 +5,7 @@ import { firestore, getCollectionPath, firebase } from '../firebase';
 import { PlusIcon, SaveIcon, CancelIcon, TrashIcon, ChevronLeftIcon, ChevronRightIcon, CogIcon, SubdirectoryArrowRightIcon, ArrowUpwardIcon, ArrowDownwardIcon, LocationIcon, EyeIcon, EyeSlashIcon } from '../components/Icons';
 import { PrimaryButton, SecondaryButton, IconButton } from '../components/common/Buttons';
 import Modal from '../components/Modal';
-import { formatDate, hexToRgba } from '../../utils';
+import { formatDate, hexToRgba } from '@/utils';
 
 const PREDEFINED_SECTION_COLORS = ['#3b82f6', '#10b981', '#f97316', '#8b5cf6', '#ec4899', '#ef4444', '#14b8a6', '#64748b'];
 

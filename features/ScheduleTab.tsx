@@ -6,7 +6,7 @@ import { PlusIcon, SaveIcon, CancelIcon, TrashIcon, EditIcon, ChevronDownIcon, A
 import { PrimaryButton, SecondaryButton, IconButton } from '../components/common/Buttons';
 import { EditableField } from '../components/common/EditableField';
 import GanttChartHeader from './schedule/GanttChart';
-import { formatDate, hexToRgba } from '../../utils';
+import { formatDate, hexToRgba } from '@/utils';
 import { JAPANESE_PUBLIC_HOLIDAYS } from '../constants';
 
 // This local parseDate ensures that date strings are parsed as local dates without time components.
